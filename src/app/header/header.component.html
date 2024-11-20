@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="header">
+  <!-- Left Buttons Section -->
+  <div class="left-buttons">
+    <button mat-button (click)="gotoOrderlist()">eOrders</button>
+    <!-- <button mat-button>
+      Sales <mat-icon>add</mat-icon>
+    </button> -->
+    <!-- <button mat-button>
+      Purchase <mat-icon>add</mat-icon>
+    </button> -->
+    <!-- <button mat-button>Inventory</button>
+    <button mat-button>MedGuide</button>
+    <button mat-button>Sahaai</button> -->
+  </div>
+
+
+
+  <!-- Right Section (Search and Cart) -->
+  <div class="right-section">
+    <!-- Search Button -->
+    <button mat-icon-button (click)="openSearchDialog()">
+      <mat-icon>search</mat-icon>
+    </button>
+
+    <!-- Cart Button -->
+    <button mat-icon-button (click)="gotoCartpage()" >
+      <mat-icon>shopping_cart</mat-icon>
+      <span class="cart-count" (click)="gotoCartpage()">{{ cartCount }}</span>
+    </button>
+  </div>
+</mat-toolbar>

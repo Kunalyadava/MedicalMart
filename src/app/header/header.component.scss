@@ -1,0 +1,72 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between; /* Ensures space between sections */
+  align-items: center;
+  padding: 0 16px;
+  width: 100%;
+}
+
+/* Left Buttons Section (50% width) */
+.left-buttons {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%; /* 50% width */
+  gap: 16px;
+}
+
+/* Center Section (40% width) */
+.center-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%; /* 40% width */
+  justify-content: center; /* Center the content inside */
+}
+
+/* Right Section (10% width) */
+.right-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 10%; /* 10% width */
+  gap: 16px; /* Space between search and cart icons */
+}
+
+/* Cart button styling */
+button.mat-icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cart count circle */
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* Optional: Styling for mat-button or mat-icon if needed */
+button.mat-button {
+  font-size: 1rem;
+  padding: 8px 16px;
+}
+
+mat-icon {
+  font-size: 1.2rem;
+}

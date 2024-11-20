@@ -1,0 +1,125 @@
+/* Styling the container to ensure equal width for carousel and product list */
+.container {
+  display: flex;
+  justify-content: space-between; /* Distribute the items equally */
+  width: 100%;
+  max-width: 1200px; /* Maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Padding around the entire container */
+}
+
+/* Styling the carousel */
+.slider {
+  flex: 1; /* Make the carousel take equal width */
+  margin-right: 20px; /* Space between carousel and product list */
+  padding: 10px; /* Padding inside the carousel container to make it smaller */
+}
+
+/* Ensure the carousel images don't stretch beyond the container width */
+.carousel-inner {
+  padding: 10px; /* Additional padding around the images */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 250px; /* Fixed height for carousel images */
+  object-fit: cover; /* Ensures the images cover the area without distortion */
+  border-radius: 8px; /* Rounded corners for the carousel images */
+}
+
+/* Styling the product list */
+.product-list {
+  flex: 1; /* Make the product list take equal width */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 products in a row, each taking equal width */
+  gap: 20px; /* Space between product cards */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Styling each product card */
+.product-card {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* Ensure the content stacks vertically */
+  justify-content: space-between; /* Distribute space evenly between content and button */
+  height: 100%; /* Ensure the card takes full height */
+}
+
+/* Styling for product images with fixed width and equal height */
+.product-image img {
+  width: 200px; /* Fixed width for product images */
+  height: 200px; /* Fixed height for product images */
+  object-fit: cover; /* Ensure the images cover the box without distortion */
+  border-radius: 8px; /* Optional rounded corners for product images */
+}
+
+/* Product title styling */
+.product-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+  overflow: hidden; /* Prevent overflow if title is too long */
+  text-overflow: ellipsis; /* Add ellipsis if the title is too long */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Manufacturer link styling */
+.product-manufacturer {
+  font-size: 14px;
+  color: #555;
+}
+
+.product-manufacturer a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.product-manufacturer a:hover {
+  text-decoration: underline;
+}
+
+/* Price styling */
+.product-price {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.mrp {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.final-price {
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+
+.discount {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Add to cart button styling */
+.add-to-cart {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Space between the product details and the button */
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}

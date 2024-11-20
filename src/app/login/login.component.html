@@ -1,0 +1,56 @@
+<div class="login-container">
+    <div class="logo-section">
+      <img src="assets/logo.png" alt="eVital Rx Logo" class="logo" />
+    </div>
+    <div class="login-form">
+      <h2>Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <label for="mobile">Mobile Number</label>
+        <input
+          type="text"
+          id="mobile"
+          formControlName="mobile"
+          placeholder="Enter mobile number"
+        />
+        <div
+          *ngIf="
+          loginForm?.get('mobile')?.hasError('required') &&
+          loginForm?.get('mobile')?.touched
+          "
+        >
+          <small class="error-message">Mobile number is required</small>
+        </div>
+        <div
+          *ngIf="
+          loginForm.get('mobile')?.hasError('pattern') &&
+            loginForm.get('mobile')?.touched
+          "
+        >
+          <small class="error-message">Invalid mobile number</small>
+        </div>
+        <label for="password">Password</label>
+        <div class="password-input">
+          <input
+            id="password"
+            type="{{showPassword ? 'text' : 'password'}}"
+            formControlName="password"
+            placeholder="Password"
+          />
+          <i (click)="togglePasswordVisibility()" class="toggle-password"></i>
+        </div>
+        <div *ngIf="loginForm?.get('password')?.hasError('required') && loginForm?.get('password')?.touched">
+          <small class="error-message">Password is required</small>
+        </div>
+        <div *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched">
+          <small class="error-message">Password must be at least 6 characters</small>
+        </div>
+        <button type="submit" class="login-button" [disabled]="!loginForm.valid">Login</button>
+      </form>
+      <a class="forgot-password" routerLink="/forgot-password">Forgot Password?</a>
+      <div class="join-chemist">
+        <p>Do you own Pharmacy?</p>
+        <a routerLink="/signup" class="join-link">Join as Chemist</a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,43 @@
+.thank-you-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;  // Light background to make the content stand out
+    border-radius: 10px;
+    border: 2px solid #6c757d; // Grey border to give a nice outline
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Subtle shadow for a lifting effect
+    max-width: 500px;  // Limit width for a neat look
+    margin: 40px auto;  // Center the container with auto margins
+    font-family: 'Arial', sans-serif;  // Clean font for better readability
+  
+    .thank-you-image {
+      width: 250px;  // Set a size for the image
+      height: auto;
+      margin-bottom: 20px;  // Space below the image
+      border-radius: 8px;  // Round the corners of the image
+    }
+  
+    h2 {
+      font-size: 28px;
+      font-weight: bold;
+      color: #4caf50;  // Green color to signify success
+      margin-bottom: 15px;  // Space below the heading
+    }
+  
+    p {
+      font-size: 18px;
+      color: #333;  // Dark color for better contrast
+      margin-top: 10px;
+  
+      strong {
+        font-weight: bold;
+        color: #007bff;  // Blue color for the order ID to highlight it
+      }
+    }
+  
+    .thank-you-message {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #777;  // Subtle text for any additional message
+    }
+  }
+  

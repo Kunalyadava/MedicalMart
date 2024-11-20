@@ -1,0 +1,179 @@
+<div class="signup-container">
+  <!-- Left Side Logo Section -->
+  <div class="logo-section">
+    <img src="assets/logo.png" alt="eVital Rx Logo" class="logo" />
+  </div>
+
+  <!-- Right Side Signup Form Section -->
+  <div class="signup-form">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm">
+      <label for="firstname">First Name</label>
+      <input type="text" id="firstname" formControlName="firstname" placeholder="Enter first name" />
+      <div *ngIf="
+          registerForm.get('firstname')?.hasError('required') &&
+          registerForm.get('firstname')?.touched
+        ">
+        <small class="error-message">First name is required</small>
+      </div>
+      <div *ngIf="
+          registerForm.get('firstname')?.hasError('specialCharInvalid') &&
+          registerForm.get('firstname')?.touched
+        ">
+        <small class="error-message">Special characters (except #) are not allowed</small>
+      </div>
+      <div *ngIf="
+    registerForm.get('firstname')?.hasError('maxlength') &&
+    registerForm.get('firstname')?.touched
+  ">
+        <small class="error-message">Characters more than 25 are not allowed</small>
+      </div>
+
+
+      <label for="mobile">Mobile Number</label>
+      <input type="text" id="mobile" formControlName="mobile" placeholder="Enter mobile number" />
+      <div *ngIf="
+          registerForm.get('mobile')?.hasError('required') &&
+          registerForm.get('mobile')?.touched
+        ">
+        <small class="error-message">Mobile number is required</small>
+      </div>
+      <div *ngIf="
+          registerForm.get('mobile')?.hasError('mobileInvalid') &&
+          registerForm.get('mobile')?.touched
+        ">
+        <small class="error-message">Invalid mobile number</small>
+      </div>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" placeholder="Enter email" />
+      <div *ngIf="
+          registerForm.get('email')?.hasError('required') &&
+          registerForm.get('email')?.touched
+        ">
+        <small class="error-message">Email is required</small>
+      </div>
+      <div *ngIf="
+          registerForm.get('email')?.hasError('email') &&
+          registerForm.get('email')?.touched
+        ">
+        <small class="error-message">Invalid email format</small>
+      </div>
+
+
+      <!-- Password -->
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" placeholder="Enter password" />
+      <div *ngIf="
+          registerForm.get('password')?.hasError('required') &&
+          registerForm.get('password')?.touched
+        ">
+        <small class="error-message">Password is required</small>
+      </div>
+      <div *ngIf="
+          registerForm.get('password')?.hasError('passwordInvalid') &&
+          registerForm.get('password')?.touched
+        ">
+        <small class="error-message">Password must contain at least one uppercase letter, one number, and
+          one special character</small>
+      </div>
+      <h3>Addresses</h3>
+      <!-- Add and Remove buttons outside the table -->
+      <div class="address-actions">
+        <button type="button" class="add-address-btn" (click)="addAddress()">
+          Add Address
+        </button>
+        <button type="button" class="remove-address-btn" (click)="removeAddress()">
+          Remove Address
+        </button>
+      </div>
+      <div formArrayName="addresses" class="address-list">
+        <table class="address-table">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Pincode</th>
+              <th>Default Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let address of addresses.controls; let i = index" [formGroupName]="i">
+              <td>
+                <input type="checkbox" formControlName="isSelected" />
+              </td>
+              <td>
+                <input type="text" formControlName="city" placeholder="Enter city" />
+                <div *ngIf="address.get('city')?.hasError('required') && address.get('city')?.touched">
+                  <small class="error-message">City is required</small>
+                </div>
+                <div *ngIf="address.get('city')?.hasError('specialCharInvalid') && address.get('city')?.touched">
+                  <small class="error-message">Special characters (except #) are not allowed</small>
+                </div>
+              </td>
+              <td>
+                <input type="text" formControlName="state" placeholder="Enter state" />
+                <div *ngIf="address.get('state')?.hasError('required') && address.get('state')?.touched">
+                  <small class="error-message">State is required</small>
+                </div>
+              </td>
+              <td>
+                <input type="text" formControlName="pincode" placeholder="Enter pincode" />
+                <div *ngIf="address.get('pincode')?.hasError('required') && address.get('pincode')?.touched">
+                  <small class="error-message">Pincode is required</small>
+                </div>
+                <div *ngIf="address.get('pincode')?.hasError('pincodeInvalid') && address.get('pincode')?.touched">
+                  <small class="error-message">Invalid pincode (should be 6 digits)</small>
+                </div>
+              </td>
+              <td>
+                <select formControlName="isDefault" (change)="onDefaultChange(i)">
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="referral-section">
+        <p (click)="toggleReferral()" class="referral-text">
+          {{
+          showReferralInput
+          ? "Referral Code (Optional)"
+          : "Have a Referral Code?"
+          }}
+        </p>
+        <input *ngIf="showReferralInput" type="text" id="referralCode" formControlName="referralCode"
+          placeholder="Enter referral code (optional)" />
+      </div>
+
+
+    </form>
+    <div class="terms-section">
+      <div class="terms-wrapper">
+        <input type="checkbox" id="terms" (change)="onTermsChange($event)" />
+        <label for="terms">
+          I agree to the <a href="/terms-of-service" target="_blank">Terms of Use</a>.
+        </label>
+      </div>
+
+      <!-- Error message if terms checkbox is not checked after form submission -->
+      <div *ngIf="!termsChecked && formSubmitted" class="error-message">
+        <small>Please agree to the terms of use</small>
+      </div>
+    </div>
+
+    <div class="submit-section">
+      <button class="signup-button" (click)="onSubmit()">
+        Register
+      </button>
+    </div>
+    <!-- Already Have an Account -->
+    <div class="already-account">
+      <p>Already have an account?</p>
+      <a routerLink="/login" class="login-link">Login Now</a>
+    </div>
+  </div>
+</div>

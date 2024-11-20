@@ -1,0 +1,65 @@
+<div class="order-list-container" id="order-{{ order.uniqueOrderId }}" *ngFor="let order of cartProducts">
+  <div class="invoice-header">
+    <!-- Pharmacy Name and Contact Details -->
+    <div class="pharmacy-details">
+      <h2>Medico Mart</h2>
+      <p><strong>Contact:</strong> +91 123 456 7890</p>
+      <p><strong>Email:</strong> support.medicomart.com</p>
+    </div>
+
+    <!-- Order Info (Ordered By) -->
+    <div class="order-info">
+      <p><strong>Ordered By:</strong> {{ userData?.firstname }} ({{ userData?.email }})</p>
+      <p><strong>Phone:</strong> {{ userData?.mobile }}</p>
+    </div>
+  </div>
+
+  <div class="order-header">
+    <div>
+      <p><strong>Order Date:</strong> {{ order.orderCreatedDate | date: 'short' }}</p>
+    </div>
+    <div>
+      <p><strong>Estimated Delivery Date:</strong> {{ getEstimatedDeliveryDate(order.orderCreatedDate) | date: 'short' }}</p>
+    </div>
+  </div>
+
+  <div class="order-details-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Item Description</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Discount % </th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of order.products">
+          <td>{{ product.name }}</td>
+          <td>{{ product.quantity || 1 }}</td>
+          <td>₹{{ product.price.mrp }}</td>
+          <td>10</td>
+          <td>₹{{ product.price.final_price * (product.quantity || 1) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="address-details">
+    <h3>Delivery Address:</h3>
+    <p>
+      City: {{ order.defaultAddress.city }}, State: {{ order.defaultAddress.state }},
+      Pincode: {{ order.defaultAddress.pincode }}
+    </p>
+  </div>
+  
+  <div class="authorized-signatory">
+    <h1>Authorized Signatory</h1>
+    <img src="assets/sign.png" alt="Authorized Signatory" class="signatory-image" />
+  </div>
+
+  <div class="download-option">
+    <button (click)="downloadPdf(order.uniqueOrderId)">Download PDF</button>
+  </div>
+</div>

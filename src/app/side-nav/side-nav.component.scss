@@ -1,0 +1,76 @@
+
+mat-toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    padding: 0 1rem; 
+  }
+  
+
+  .header-container {
+    margin-left: auto; 
+  }
+  
+
+  mat-sidenav-container {
+    height: 100%;
+  }
+  
+  
+  mat-sidenav {
+    padding-top: 3.5rem;
+    transition: width 0.3s ease;
+  }
+  
+
+  @media screen and (min-width: 600px) {
+    mat-sidenav {
+      padding-top: 4rem;
+    }
+  }
+  
+
+  mat-sidenav-content {
+    padding-top: 3.5rem;
+  }
+  
+
+  @media screen and (min-width: 600px) {
+    mat-sidenav-content {
+      padding-top: 4rem;
+    }
+  }
+  
+
+  .expanded {
+    width: 250px;
+  }
+  
+
+  h1 {
+    padding: 0 1rem;
+  }
+  
+  h2 {
+    padding: 1rem;
+  }
+  
+
+  mat-sidenav .entry {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    mat-sidenav-content {
+      padding-top: 4rem; 
+    }
+  }
+  

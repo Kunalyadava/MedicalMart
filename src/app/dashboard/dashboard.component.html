@@ -1,0 +1,60 @@
+
+<div class="container" style="display:flex">
+  <div class="slider">
+  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/banner2.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/banner1.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/banner3.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+<div class="product-list">
+    <div *ngIf="products.length == 0" class="no-products">
+      <p>Loading products...</p>
+    </div>
+
+    <div *ngFor="let product of products" class="product-card">
+      <div class="product-image">
+        <img [src]="product.image" alt="{{ product.name }}" />
+      </div>
+      <div class="product-details">
+        <h3 class="product-title">{{ product.name }}</h3>
+        <p class="product-manufacturer">
+          <a [href]="product.manufacturer.url" target="_blank">
+            Manufactured by {{ product.manufacturer.name }}
+          </a>
+        </p>
+        <p class="product-price">
+          <span class="mrp">₹{{ product.price.mrp }}</span>
+          <span class="final-price">₹{{ product.price.final_price }}</span>
+          <span class="discount">-{{ product.price.discount_perc }}%</span>
+        </p>
+        <button class="add-to-cart" (click)="addToCart(product)">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+</div>
+</div>

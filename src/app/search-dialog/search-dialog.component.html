@@ -1,0 +1,67 @@
+<mat-dialog-content>
+    <div class="header">
+        <div class="dropdown">
+            <mat-form-field>
+                <mat-select class="medicine-dropdown"  [(ngModel)]="selectedOption">
+                    <mat-option value="Medicine">Medicine</mat-option>
+                    <mat-option value="Customer">Customer</mat-option>
+                    <mat-option value="B2B Customer">B2B Customer</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <form class="example-form" (ngSubmit)="searchMedicine()">
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="Search here"
+                class="search-input"
+                [(ngModel)]="searchString"
+                name="searchInput"
+                required
+              />
+            </mat-form-field>
+            <button class="search-button" type="submit">Search</button>
+          </form>
+
+        <!-- <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="search here" class="search-input">
+            </mat-form-field>
+            <div class="search-button">search
+            </div>
+        </form> -->
+
+        <button class="close-button">X</button>
+    </div>
+
+    <br>
+
+    <div *ngIf="!searchResults || searchResults.length === 0" class="medicine-container">
+        <h2>Frequently Browsed</h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-boxes"></i> Purchase</a></li>
+            <li><a href="#"><i class="fas fa-walking"></i> eOrders</a></li>
+            <li><a href="#"><i class="fas fa-file-alt"></i> Margin Report</a></li>
+            <li><a href="#"><i class="fas fa-exchange-alt"></i> Business Insights</a></li>
+            <li><a href="#"><i class="fas fa-undo"></i> Sales Return</a></li>
+            <li><a href="#"><i class="fas fa-file-alt"></i> Reports</a></li>
+        </ul>
+    </div>
+
+    <div *ngIf="searchResults && searchResults.length > 0">
+        <h3>Search Results</h3>
+        <ul>
+          <li *ngFor="let item of searchResults">
+            {{ item.name }} - {{ item.details }}
+          </li>
+        </ul>
+      </div>
+    
+      <!-- <div *ngIf="searchResults && searchResults.length === 0">
+        <p>No products found.</p>
+      </div> -->
+    
+</mat-dialog-content>
+
+
+

@@ -1,0 +1,70 @@
+/* Base styles for the logout confirmation dialog */
+.logout-confirmation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    max-width: 400px; /* Max width for the dialog */
+    width: 100%; /* Full width for responsiveness */
+    text-align: center; /* Center the text in the dialog */
+  
+    h3 {
+      font-size: 22px; /* Increased font size for the confirmation text */
+      font-weight: 600;
+      margin-bottom: 15px; /* Reduced margin to make it tighter */
+      color: #333;
+    }
+  
+    .buttons {
+      text-align: center; /* Center the buttons horizontally */
+      margin-top: 20px; /* Space between the confirmation message and buttons */
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 8px 16px; /* Reduced padding for more compact buttons */
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      min-width: 90px; /* Ensures buttons have a consistent size */
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
+      margin: 0 10px; /* Add space between buttons using margin */
+    }
+  
+    /* OK button - styled with primary color */
+    button:first-child {
+      background-color: #007bff;
+      color: white;
+      &:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+      }
+    }
+  
+    /* Cancel button - styled with a light grey background */
+    button:last-child {
+      background-color: #f0f0f0;
+      color: #333;
+      &:hover {
+        background-color: #e0e0e0; /* Light grey on hover */
+      }
+    }
+  }
+  
+  /* Optional: Make the dialog responsive on smaller screens */
+  @media (max-width: 600px) {
+    .logout-confirmation {
+      width: 90%; /* Dialog will take 90% of the screen width on smaller devices */
+      max-width: none;
+    }
+  
+    button {
+      font-size: 12px;
+      padding: 8px 16px;
+    }
+  }
+  

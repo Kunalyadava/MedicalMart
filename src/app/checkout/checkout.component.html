@@ -1,0 +1,59 @@
+<div class="checkout-container">
+    <h2>Checkout</h2>
+  
+    <!-- Total Price -->
+    <div class="total-price">
+      <p>Total Price: ₹{{ totalPrice.toFixed(2) }}</p>
+    </div>
+  
+    <form [formGroup]="checkoutForm" (ngSubmit)="processPayment()">
+      <!-- Payment Method -->
+      <div>
+        <label>Payment Method</label>
+        <div>
+          <label>
+            <input type="radio" formControlName="paymentMethod" value="card" (change)="onPaymentMethodChange('card')" />
+            Pay with Card
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" formControlName="paymentMethod" value="upi" (change)="onPaymentMethodChange('upi')" />
+            Pay with UPI
+          </label>
+        </div>
+      </div>
+      
+      <!-- Card Details -->
+      <div *ngIf="cardDetailsVisible">
+        <div>
+          <label for="cardNumber">Card Number</label>
+          <input type="text" formControlName="cardNumber" placeholder="Enter 16-digit card number" />
+          <div *ngIf="checkoutForm.get('cardNumber')?.invalid && checkoutForm.get('cardNumber')?.touched">
+            <span class="error-message">Card number is required and must be 16 digits.</span>
+          </div>
+        </div>
+        <div>
+          <label for="cvv">CVV</label>
+          <input type="text" formControlName="cvv" placeholder="Enter 3-digit CVV" />
+          <div *ngIf="checkoutForm.get('cvv')?.invalid && checkoutForm.get('cvv')?.touched">
+            <span class="error-message">CVV is required and must be 3 digits.</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- UPI Details -->
+      <div *ngIf="upiDetailsVisible">
+        <div>
+          <label for="upiId">UPI ID</label>
+          <input type="text" formControlName="upiId" placeholder="Enter UPI ID" />
+          <div *ngIf="checkoutForm.get('upiId')?.invalid && checkoutForm.get('upiId')?.touched">
+            <span class="error-message">UPI ID is required and must be in a valid format.</span>
+          </div>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="checkoutForm.invalid">Proceed to Payment</button>
+    </form>
+  </div>
+  

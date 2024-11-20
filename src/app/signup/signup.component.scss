@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #002d60;
+  color: #ffffff;
+}
+
+.signup-container {
+  display: flex;
+  height: 100vh; /* Ensure full screen height */
+}
+
+.logo-section {
+  width: 40%; /* Adjust width to leave room for form */
+  background-color: #002d60;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.logo {
+  width: 200px;
+}
+
+.signup-form {
+  width: 60%; /* Adjust form width to complement the logo */
+  background-color: #ffffff;  /* White background for the form */
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333333;  /* Dark text for better readability */
+}
+
+.signup-form h2 {
+  font-size: 2rem;
+  color: #002d60;  /* Deep blue for the heading */
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  margin: 1rem 0 0.5rem;
+  color: #333333;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+/* Terms Section Wrapper */
+.terms-section {
+  margin-top: 1.5rem;
+}
+
+/* Aligning the Checkbox and Label */
+.terms-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between checkbox and text */
+  font-size: 1rem;
+  color: #333333;
+}
+
+.terms-wrapper input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.terms-wrapper label {
+  cursor: pointer;
+}
+
+.terms-wrapper a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.terms-wrapper a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.address-list {
+  max-height: 250px;
+  overflow-y: auto;
+  margin-top: 2rem;
+}
+
+.address-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.address-table th,
+.address-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.address-table th {
+  background-color: #f1f1f1;
+}
+
+.address-table input[type="text"],
+.address-table select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+.address-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.add-address-btn,
+.remove-address-btn {
+  background-color: #002d60;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-address-btn:hover,
+.remove-address-btn:hover {
+  background-color: #004080;
+}
+
+.add-address-btn:disabled,
+.remove-address-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.warning-message {
+  color: #ff9900;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #002d60;
+  color: #ffffff;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #004080;
+}
+
+.signup-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.already-account {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.login-link {
+  color: #002d60;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .logo-section {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .signup-form {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .address-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

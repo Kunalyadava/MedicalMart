@@ -1,0 +1,39 @@
+<div class="cart-container">
+  <h1>Your Cart</h1>
+
+  <!-- If the cart is empty, show a message -->
+  <div *ngIf="cartProducts.length === 0" class="empty-cart">
+    <p>Your cart is empty. Please add some products to your cart.</p>
+    <button (click)="dashboard()">Go to Products</button>
+  </div>
+
+  <!-- Container for cart items -->
+  <div class="cart-items-container">
+    <!-- Loop through cart products and display each product -->
+    <div *ngFor="let product of cartProducts" class="cart-item">
+      <img [src]="product.image" alt="Product Image" class="product-image" />
+      <div class="product-details">
+        <h3>{{ product.name }}</h3>
+        <p>Price: ₹{{ product.price?.final_price || product.price.mrp }}</p>
+        <div class="quantity">
+          <button (click)="decreaseQuantity(product)">-</button>
+          <span>{{ product.quantity || 1 }}</span>
+          <button (click)="increaseQuantity(product)">+</button>
+        </div>
+        <p>Total: ₹{{ (product.price?.final_price || product.price.mrp) * (product.quantity || 1) }}</p>
+        <p *ngIf="product.price?.mrp && product.price?.final_price">
+          Discount: ₹{{ (product.price?.mrp - product.price?.final_price) * (product.quantity || 1) }}
+        </p>
+        <button (click)="removeFromCart(product)" class="remove-btn">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Show cart summary if there are products in the cart -->
+  <div *ngIf="cartProducts.length > 0" class="cart-summary">
+    <p>Total Items: {{ totalItems }}</p>
+    <p>Total Price: ₹{{ totalPrice.toFixed(2) }}</p>
+    <p>Total Discount: ₹{{ totalDiscount.toFixed(2) }}</p>
+    <button (click)="checkout()" class="checkout-btn">Proceed to Checkout</button>
+  </div>
+</div>
