@@ -1,0 +1,514 @@
+{
+  "users": [
+    {
+      "id": "ad1d",
+      "firstname": "Kunal",
+      "mobile": "7903438810",
+      "email": "Kunal@gmail.com",
+      "referralCode": "",
+      "password": "Kunal@123",
+      "addresses": [
+        {
+          "isSelected": false,
+          "city": "Gujrat",
+          "state": "Ahmedabad",
+          "pincode": "560086",
+          "isDefault": "yes"
+        }
+      ],
+      "cartArray": [
+        {
+          "product_id": 96135,
+          "name": "Liv-52 Syrup by Himalaya",
+          "manufacturer": {
+            "name": "Himalaya",
+            "url": "https://www.myupchar.com/medicine/manufacturer/himalaya"
+          },
+          "form": "200 ml Syrup in 1 Bottle",
+          "form_hi": "एक बोतल में 200 ml सिरप",
+          "image": "https://himalayawellness.in/cdn/shop/products/Liv52_Drops_60ml_-_2000x2000_1e76cdf9-b864-4267-8fa1-3e5f33d33945.jpg?v=1622099990",
+          "images_hsh": {
+            "array": [
+              "https://richesm.com/wp-content/uploads/2022/06/Himalaya-Liv.52-Syrup-200-ml.jpg",
+              "https://richesm.com/wp-content/uploads/2022/06/Himalaya-Liv.52-Syrup-200-ml_2.jpg"
+            ],
+            "square_images": false
+          },
+          "price": {
+            "mrp": 150,
+            "final_price": 135,
+            "discount_perc": 10
+          },
+          "in_stock": true,
+          "product_url": "https://www.myupchar.com/medicine/liv-52-syrup-by-himalaya-p36751517",
+          "id": "f645",
+          "quantity": 2
+        }
+      ],
+      "orderedProducts": [
+        {
+          "products": [
+            {
+              "product_id": 96135,
+              "name": "Liv-52 Syrup by Himalaya",
+              "manufacturer": {
+                "name": "Himalaya",
+                "url": "https://www.myupchar.com/medicine/manufacturer/himalaya"
+              },
+              "form": "200 ml Syrup in 1 Bottle",
+              "form_hi": "एक बोतल में 200 ml सिरप",
+              "image": "https://himalayawellness.in/cdn/shop/products/Liv52_Drops_60ml_-_2000x2000_1e76cdf9-b864-4267-8fa1-3e5f33d33945.jpg?v=1622099990",
+              "images_hsh": {
+                "array": [
+                  "https://richesm.com/wp-content/uploads/2022/06/Himalaya-Liv.52-Syrup-200-ml.jpg",
+                  "https://richesm.com/wp-content/uploads/2022/06/Himalaya-Liv.52-Syrup-200-ml_2.jpg"
+                ],
+                "square_images": false
+              },
+              "price": {
+                "mrp": 150,
+                "final_price": 135,
+                "discount_perc": 10
+              },
+              "in_stock": true,
+              "product_url": "https://www.myupchar.com/medicine/liv-52-syrup-by-himalaya-p36751517",
+              "id": "f645",
+              "quantity": 1
+            },
+            {
+              "product_id": 96133,
+              "name": "Thekaraja Tailam By Arya Vaidya Sala",
+              "manufacturer": {
+                "name": "Arya Vaidya Sala",
+                "url": "https://www.myupchar.com/medicine/manufacturer/arya-vaidya-sala"
+              },
+              "form": "30 ml Oil in 1 Bottle",
+              "form_hi": "एक बोतल में 30 ml ऑयल",
+              "image": "https://vaidyaratnamstore.com/storage/products/YqtEAIOap8cX0P5hGzbqIA0LUxfjEnQyo0rP0r8K.png",
+              "images_hsh": {
+                "array": [
+                  "https://meds.myupchar.com/10644/arya-vaidya-sala-kottakkal-balarishtam-in-hindi-36751542-71990.jpg",
+                  "https://meds.myupchar.com/11010/arya-vaidya-sala-kottakkal-vranaropana-tailam-in-hindi-36751799-71855.jpg"
+                ],
+                "square_images": false
+              },
+              "price": {
+                "mrp": 100,
+                "final_price": 90,
+                "discount_perc": 10
+              },
+              "in_stock": true,
+              "product_url": "https://www.myupchar.com/medicine/thekaraja-tailam-by-arya-vaidya-sala-p36751515",
+              "id": "1bad",
+              "quantity": 1
+            }
+          ],
+          "totalPrice": 225,
+          "uniqueOrderId": "ORD1732083597237",
+          "defaultAddress": {
+            "isSelected": false,
+            "city": "Gujrat",
+            "state": "Ahmedabad",
+            "pincode": "560086",
+            "isDefault": "yes"
+          },
+          "orderCreatedDate": "2024-11-20T06:19:57.237Z"
+        },
+        {
+          "products": [
+            {
+              "product_id": 96133,
+              "name": "Thekaraja Tailam By Arya Vaidya Sala",
+              "manufacturer": {
+                "name": "Arya Vaidya Sala",
+                "url": "https://www.myupchar.com/medicine/manufacturer/arya-vaidya-sala"
+              },
+              "form": "30 ml Oil in 1 Bottle",
+              "form_hi": "एक बोतल में 30 ml ऑयल",
+              "image": "https://vaidyaratnamstore.com/storage/products/YqtEAIOap8cX0P5hGzbqIA0LUxfjEnQyo0rP0r8K.png",
+              "images_hsh": {
+                "array": [
+                  "https://meds.myupchar.com/10644/arya-vaidya-sala-kottakkal-balarishtam-in-hindi-36751542-71990.jpg",
+                  "https://meds.myupchar.com/11010/arya-vaidya-sala-kottakkal-vranaropana-tailam-in-hindi-36751799-71855.jpg"
+                ],
+                "square_images": false
+              },
+              "price": {
+                "mrp": 100,
+                "final_price": 90,
+                "discount_perc": 10
+              },
+              "in_stock": true,
+              "product_url": "https://www.myupchar.com/medicine/thekaraja-tailam-by-arya-vaidya-sala-p36751515",
+              "id": "1bad"
+            }
+          ],
+          "totalPrice": 90,
+          "uniqueOrderId": "ORD1732087569469",
+          "defaultAddress": {
+            "isSelected": false,
+            "city": "Gujrat",
+            "state": "Ahmedabad",
+            "pincode": "560086",
+            "isDefault": "yes"
+          },
+          "orderCreatedDate": "2024-11-20T07:26:09.469Z"
+        },
+        {
+          "products": [
+            {
+              "product_id": 96135,
+              "name": "Liv-52 Syrup by Himalaya",
+              "manufacturer": {
+                "name": "Himalaya",
+                "url": "https://www.myupchar.com/medicine/manufacturer/himalaya"
+              },
+              "form": "200 ml Syrup in 1 Bottle",
+              "form_hi": "एक बोतल में 200 ml सिरप",
+              "image": "https://himalayawellness.in/cdn/shop/products/Liv52_Drops_60ml_-_2000x2000_1e76cdf9-b864-4267-8fa1-3e5f33d33945.jpg?v=1622099990",
+              "images_hsh": {
+                "array": [
+                  "https://richesm.com/wp-content/uploads/2022/06/Himalaya-Liv.52-Syrup-200-ml.jpg",
+                  "https://richesm.com/wp-content/uploads/2022/06/Himalaya-Liv.52-Syrup-200-ml_2.jpg"
+                ],
+                "square_images": false
+              },
+              "price": {
+                "mrp": 150,
+                "final_price": 135,
+                "discount_perc": 10
+              },
+              "in_stock": true,
+              "product_url": "https://www.myupchar.com/medicine/liv-52-syrup-by-himalaya-p36751517",
+              "id": "f645"
+            }
+          ],
+          "totalPrice": 135,
+          "uniqueOrderId": "ORD1732088859840",
+          "defaultAddress": {
+            "isSelected": false,
+            "city": "Gujrat",
+            "state": "Ahmedabad",
+            "pincode": "560086",
+            "isDefault": "yes"
+          },
+          "orderCreatedDate": "2024-11-20T07:47:39.840Z"
+        }
+      ]
+    },
+    {
+      "id": "44cb",
+      "firstname": "Niket",
+      "mobile": "9572916292",
+      "email": "Niket@123",
+      "referralCode": "",
+      "password": "Niket@123",
+      "addresses": [
+        {
+          "isSelected": false,
+          "city": "Boisar",
+          "state": "Maharastra",
+          "pincode": "560056",
+          "isDefault": "yes"
+        }
+      ],
+      "cartArray": [
+        {
+          "product_id": 96133,
+          "name": "Thekaraja Tailam By Arya Vaidya Sala",
+          "manufacturer": {
+            "name": "Arya Vaidya Sala",
+            "url": "https://www.myupchar.com/medicine/manufacturer/arya-vaidya-sala"
+          },
+          "form": "30 ml Oil in 1 Bottle",
+          "form_hi": "एक बोतल में 30 ml ऑयल",
+          "image": "https://vaidyaratnamstore.com/storage/products/YqtEAIOap8cX0P5hGzbqIA0LUxfjEnQyo0rP0r8K.png",
+          "images_hsh": {
+            "array": [
+              "https://meds.myupchar.com/10644/arya-vaidya-sala-kottakkal-balarishtam-in-hindi-36751542-71990.jpg",
+              "https://meds.myupchar.com/11010/arya-vaidya-sala-kottakkal-vranaropana-tailam-in-hindi-36751799-71855.jpg"
+            ],
+            "square_images": false
+          },
+          "price": {
+            "mrp": 100,
+            "final_price": 90,
+            "discount_perc": 10
+          },
+          "in_stock": true,
+          "product_url": "https://www.myupchar.com/medicine/thekaraja-tailam-by-arya-vaidya-sala-p36751515",
+          "id": "1bad"
+        },
+        {
+          "product_id": 96134,
+          "name": "Chyawanprash by Dabur",
+          "manufacturer": {
+            "name": "Dabur",
+            "url": "https://www.myupchar.com/medicine/manufacturer/dabur"
+          },
+          "form": "500 gm Paste in 1 Jar",
+          "form_hi": "एक जार में 500 gm पेस्ट",
+          "image": "https://richesm.com/wp-content/uploads/2022/07/Baidyanath-Chyawanprash-Special-950g-With-50g-Madhu-Free.jpg",
+          "images_hsh": {
+            "array": [
+              "https://richesm.com/wp-content/uploads/2022/07/Baidyanath-Chyawanprash-Special-950g-With-50g-Madhu-Free3.jpg",
+              "https://richesm.com/wp-content/uploads/2022/07/Baidyanath-Chyawanprash-Special-950g-With-50g-Madhu-Free2.jpg"
+            ],
+            "square_images": false
+          },
+          "price": {
+            "mrp": 350,
+            "final_price": 315,
+            "discount_perc": 10
+          },
+          "in_stock": true,
+          "product_url": "https://www.myupchar.com/medicine/chyawanprash-by-dabur-p36751516",
+          "id": "17aa"
+        }
+      ],
+      "orderedProducts": [
+        {
+          "products": [
+            {
+              "product_id": 96133,
+              "name": "Thekaraja Tailam By Arya Vaidya Sala",
+              "manufacturer": {
+                "name": "Arya Vaidya Sala",
+                "url": "https://www.myupchar.com/medicine/manufacturer/arya-vaidya-sala"
+              },
+              "form": "30 ml Oil in 1 Bottle",
+              "form_hi": "एक बोतल में 30 ml ऑयल",
+              "image": "https://vaidyaratnamstore.com/storage/products/YqtEAIOap8cX0P5hGzbqIA0LUxfjEnQyo0rP0r8K.png",
+              "images_hsh": {
+                "array": [
+                  "https://meds.myupchar.com/10644/arya-vaidya-sala-kottakkal-balarishtam-in-hindi-36751542-71990.jpg",
+                  "https://meds.myupchar.com/11010/arya-vaidya-sala-kottakkal-vranaropana-tailam-in-hindi-36751799-71855.jpg"
+                ],
+                "square_images": false
+              },
+              "price": {
+                "mrp": 100,
+                "final_price": 90,
+                "discount_perc": 10
+              },
+              "in_stock": true,
+              "product_url": "https://www.myupchar.com/medicine/thekaraja-tailam-by-arya-vaidya-sala-p36751515",
+              "id": "1bad",
+              "quantity": 2
+            },
+            {
+              "product_id": 96134,
+              "name": "Chyawanprash by Dabur",
+              "manufacturer": {
+                "name": "Dabur",
+                "url": "https://www.myupchar.com/medicine/manufacturer/dabur"
+              },
+              "form": "500 gm Paste in 1 Jar",
+              "form_hi": "एक जार में 500 gm पेस्ट",
+              "image": "https://richesm.com/wp-content/uploads/2022/07/Baidyanath-Chyawanprash-Special-950g-With-50g-Madhu-Free.jpg",
+              "images_hsh": {
+                "array": [
+                  "https://richesm.com/wp-content/uploads/2022/07/Baidyanath-Chyawanprash-Special-950g-With-50g-Madhu-Free3.jpg",
+                  "https://richesm.com/wp-content/uploads/2022/07/Baidyanath-Chyawanprash-Special-950g-With-50g-Madhu-Free2.jpg"
+                ],
+                "square_images": false
+              },
+              "price": {
+                "mrp": 350,
+                "final_price": 315,
+                "discount_perc": 10
+              },
+              "in_stock": true,
+              "product_url": "https://www.myupchar.com/medicine/chyawanprash-by-dabur-p36751516",
+              "id": "17aa",
+              "quantity": 2
+            }
+          ],
+          "totalPrice": 810,
+          "uniqueOrderId": "ORD1732115656558",
+          "defaultAddress": {
+            "isSelected": false,
+            "city": "Boisar",
+            "state": "Maharastra",
+            "pincode": "560056",
+            "isDefault": "yes"
+          },
+          "orderCreatedDate": "2024-11-20T15:14:16.558Z"
+        },
+        {
+          "products": [
+            {
+              "product_id": 96133,
+              "name": "Thekaraja Tailam By Arya Vaidya Sala",
+              "manufacturer": {
+                "name": "Arya Vaidya Sala",
+                "url": "https://www.myupchar.com/medicine/manufacturer/arya-vaidya-sala"
+              },
+              "form": "30 ml Oil in 1 Bottle",
+              "form_hi": "एक बोतल में 30 ml ऑयल",
+              "image": "https://vaidyaratnamstore.com/storage/products/YqtEAIOap8cX0P5hGzbqIA0LUxfjEnQyo0rP0r8K.png",
+              "images_hsh": {
+                "array": [
+                  "https://meds.myupchar.com/10644/arya-vaidya-sala-kottakkal-balarishtam-in-hindi-36751542-71990.jpg",
+                  "https://meds.myupchar.com/11010/arya-vaidya-sala-kottakkal-vranaropana-tailam-in-hindi-36751799-71855.jpg"
+                ],
+                "square_images": false
+              },
+              "price": {
+                "mrp": 100,
+                "final_price": 90,
+                "discount_perc": 10
+              },
+              "in_stock": true,
+              "product_url": "https://www.myupchar.com/medicine/thekaraja-tailam-by-arya-vaidya-sala-p36751515",
+              "id": "1bad",
+              "quantity": 3
+            }
+          ],
+          "totalPrice": 270,
+          "uniqueOrderId": "ORD1732120176542",
+          "defaultAddress": {
+            "isSelected": false,
+            "city": "Boisar",
+            "state": "Maharastra",
+            "pincode": "560056",
+            "isDefault": "yes"
+          },
+          "orderCreatedDate": "2024-11-20T16:29:36.542Z"
+        }
+      ]
+    }
+  ],
+  "medicines": [
+    {
+      "product_id": 96133,
+      "name": "Thekaraja Tailam By Arya Vaidya Sala",
+      "manufacturer": {
+        "name": "Arya Vaidya Sala",
+        "url": "https://www.myupchar.com/medicine/manufacturer/arya-vaidya-sala"
+      },
+      "form": "30 ml Oil in 1 Bottle",
+      "form_hi": "एक बोतल में 30 ml ऑयल",
+      "image": "https://vaidyaratnamstore.com/storage/products/YqtEAIOap8cX0P5hGzbqIA0LUxfjEnQyo0rP0r8K.png",
+      "images_hsh": {
+        "array": [
+          "https://meds.myupchar.com/10644/arya-vaidya-sala-kottakkal-balarishtam-in-hindi-36751542-71990.jpg",
+          "https://meds.myupchar.com/11010/arya-vaidya-sala-kottakkal-vranaropana-tailam-in-hindi-36751799-71855.jpg"
+        ],
+        "square_images": false
+      },
+      "price": {
+        "mrp": 100,
+        "final_price": 90,
+        "discount_perc": 10
+      },
+      "in_stock": true,
+      "product_url": "https://www.myupchar.com/medicine/thekaraja-tailam-by-arya-vaidya-sala-p36751515",
+      "id": "1bad"
+    },
+    {
+      "product_id": 96134,
+      "name": "Chyawanprash by Dabur",
+      "manufacturer": {
+        "name": "Dabur",
+        "url": "https://www.myupchar.com/medicine/manufacturer/dabur"
+      },
+      "form": "500 gm Paste in 1 Jar",
+      "form_hi": "एक जार में 500 gm पेस्ट",
+      "image": "https://richesm.com/wp-content/uploads/2022/07/Baidyanath-Chyawanprash-Special-950g-With-50g-Madhu-Free.jpg",
+      "images_hsh": {
+        "array": [
+          "https://richesm.com/wp-content/uploads/2022/07/Baidyanath-Chyawanprash-Special-950g-With-50g-Madhu-Free3.jpg",
+          "https://richesm.com/wp-content/uploads/2022/07/Baidyanath-Chyawanprash-Special-950g-With-50g-Madhu-Free2.jpg"
+        ],
+        "square_images": false
+      },
+      "price": {
+        "mrp": 350,
+        "final_price": 315,
+        "discount_perc": 10
+      },
+      "in_stock": true,
+      "product_url": "https://www.myupchar.com/medicine/chyawanprash-by-dabur-p36751516",
+      "id": "17aa"
+    },
+    {
+      "product_id": 96135,
+      "name": "Liv-52 Syrup by Himalaya",
+      "manufacturer": {
+        "name": "Himalaya",
+        "url": "https://www.myupchar.com/medicine/manufacturer/himalaya"
+      },
+      "form": "200 ml Syrup in 1 Bottle",
+      "form_hi": "एक बोतल में 200 ml सिरप",
+      "image": "https://himalayawellness.in/cdn/shop/products/Liv52_Drops_60ml_-_2000x2000_1e76cdf9-b864-4267-8fa1-3e5f33d33945.jpg?v=1622099990",
+      "images_hsh": {
+        "array": [
+          "https://richesm.com/wp-content/uploads/2022/06/Himalaya-Liv.52-Syrup-200-ml.jpg",
+          "https://richesm.com/wp-content/uploads/2022/06/Himalaya-Liv.52-Syrup-200-ml_2.jpg"
+        ],
+        "square_images": false
+      },
+      "price": {
+        "mrp": 150,
+        "final_price": 135,
+        "discount_perc": 10
+      },
+      "in_stock": true,
+      "product_url": "https://www.myupchar.com/medicine/liv-52-syrup-by-himalaya-p36751517",
+      "id": "f645"
+    },
+    {
+      "product_id": 96136,
+      "name": "Zandu Balm",
+      "manufacturer": {
+        "name": "Zandu",
+        "url": "https://www.myupchar.com/medicine/manufacturer/zandu"
+      },
+      "form": "25 gm Balm in 1 Jar",
+      "form_hi": "एक जार में 25 gm बाम",
+      "image": "https://richesm.com/wp-content/uploads/2023/04/Zandu-Ultra-Power-Balm-8ml.jpg.webp",
+      "images_hsh": {
+        "array": [
+          "https://richesm.com/wp-content/uploads/2023/04/Zandu-Ultra-Power-Balm-8ml3.jpg.webp",
+          "https://richesm.com/wp-content/uploads/2023/04/Zandu-Ultra-Power-Balm-8ml6.jpg.webp"
+        ],
+        "square_images": false
+      },
+      "price": {
+        "mrp": 60,
+        "final_price": 54,
+        "discount_perc": 10
+      },
+      "in_stock": true,
+      "product_url": "https://www.myupchar.com/medicine/zandu-balm-p36751518",
+      "id": "e2d7"
+    },
+    {
+      "product_id": 96137,
+      "name": "Amrutanjan Roll-On",
+      "manufacturer": {
+        "name": "Amrutanjan",
+        "url": "https://www.myupchar.com/medicine/manufacturer/amrutanjan"
+      },
+      "form": "10 ml Roll-On in 1 Pack",
+      "form_hi": "एक पैक में 10 ml रोल-ऑन",
+      "image": "https://www.worldofamrutanjan.com/pub/media/catalog/product/cache/17a254aa0c92e2b58006469595f1bc3e/a/m/amrutanjancold_rub_image_1_3.png",
+      "images_hsh": {
+        "array": [
+          "https://www.worldofamrutanjan.com/pub/media/catalog/product/cache/17a254aa0c92e2b58006469595f1bc3e/a/m/amrutanjancold_rub_image_5_1.png",
+          "https://www.worldofamrutanjan.com/pub/media/catalog/product/cache/17a254aa0c92e2b58006469595f1bc3e/i/n/inhaler_image_2_2.png"
+        ],
+        "square_images": false
+      },
+      "price": {
+        "mrp": 80,
+        "final_price": 72,
+        "discount_perc": 10
+      },
+      "in_stock": true,
+      "product_url": "https://www.myupchar.com/medicine/amrutanjan-roll-on-p36751519",
+      "id": "a6be"
+    }
+  ]
+}
