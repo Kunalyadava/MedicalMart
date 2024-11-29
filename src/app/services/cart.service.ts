@@ -6,27 +6,27 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CartService {
   private cartCountSubject = new BehaviorSubject<number>(this.loadCartCountFromLocalStorage());  
-  cartCount$ = this.cartCountSubject.asObservable();  // Observable for cart count
+  cartCount$ = this.cartCountSubject.asObservable();  
 
-  private cartItems: any[] = [];  // Track cart items
+  private cartItems: any[] = [];  
 
   constructor() {}
 
-  // Load cart count from localStorage
+
   private loadCartCountFromLocalStorage(): number {
     const cartCount = localStorage.getItem('cartCount');
     return cartCount ? parseInt(cartCount, 10) : 0;
   }
 
-  // Update the cart count
+
   updateCartCount(count: number): void {
-    this.cartCountSubject.next(count);  // Update the cart count observable
-    localStorage.setItem('cartCount', count.toString());  // Save updated count in localStorage
+    this.cartCountSubject.next(count);  
+    localStorage.setItem('cartCount', count.toString());  
   }
 
-  // Update the cart items
+
   updateCartItems(items: any[]): void {
-    this.cartItems = items;  // Update the items in the cart
+    this.cartItems = items;  
   }
 
   getCartCount(): number {

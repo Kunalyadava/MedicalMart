@@ -66,23 +66,23 @@ export class DashboardComponent implements OnInit, OnDestroy {
       this.toastr.warning('Please login to shop for medicines.', 'Login Required');
       return;
     }
-    // Log the product to verify that the correct product is being passed
+
     console.log('Product to add to cart:', product);
     console.log('Product ID:', product.product_id);
 
-    // Check if the product is already in the cart
+
     const isProductInCart = this.cartArrayfromUserdata
       ? this.cartArrayfromUserdata.some(item => item.product_id === product.product_id)
       : false;
 
-    // If the product is already in the cart, notify the user and exit
+
     if (isProductInCart) {
       console.log("Product already added to the cart");
       this.toastr.info('This product is already in your cart!', 'Info');
       return;
     }
 
-    // Find the product to add from the products list
+    
     const productToAdd = this.products.find(item => item.product_id === product.product_id);
     if (!productToAdd) {
       console.log("Product not found");
@@ -90,39 +90,37 @@ export class DashboardComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // Initialize cartArray if it doesn't exist
+
     if (!this.cartArrayfromUserdata) {
       this.cartArrayfromUserdata = [];
     }
 
-    // Add the product to the cartArrayfromUserdata
+
     this.cartArrayfromUserdata.push(productToAdd);
 
-    // Update the userData object with the updated cartArray
     this.userData = { ...this.userData, cartArray: this.cartArrayfromUserdata };
 
-    // Update the cart count in the UI
     // this.cartService.updateCartCount(this.cartArrayfromUserdata.length);
     const cartCount = this.cartArrayfromUserdata.length;
     this.cartService.updateCartCount(cartCount);
     localStorage.setItem('cartCount', cartCount.toString());
 
-    // Send the updated cartArray to the server
+
     this.http.updateUser(this.userId, this.userData)
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: () => {
-          // Success message with toast
+        
           this.toastr.success('Product added to cart successfully!', 'Success');
         },
         error: (error) => {
           console.error('Error updating cart:', error);
-          // Error message with toast
+    
           this.toastr.error('Error adding product to cart. Please try again later.', 'Error');
         }
       });
 
-    // Optionally, update the cart array with the cart items in the service (if you also want it in the local cart state)
+
     this.cartService.updateCartItems(this.cartArrayfromUserdata);
   }
 

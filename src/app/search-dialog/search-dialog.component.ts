@@ -26,55 +26,63 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./search-dialog.component.scss']
 })
 export class SearchDialogComponent {
-  private apiKey = 'wFIMP75eG1sQEh8vVAdXykgzF4mLhDw3';
-  selectedOption: string = 'Medicine'; 
   searchString: string = ''; 
+  selectedCategory: string = ''; 
   searchResults: any[] = []; 
-  isLoading: boolean = false; 
+  products: any[] = [];
+  cart: any[] = [];  
 
   constructor(
     public dialogRef: MatDialogRef<SearchDialogComponent>,
-    private http: ApiService, 
+    private http: ApiService,
     private toastr: ToastrService
   ) {}
 
+  ngOnInit(): void {
+    this.searchMedicine(); 
+  }
+
   searchMedicine(): void {
-    if (!this.searchString.trim()) {
-      this.toastr.error('Please enter a search item.', 'Error');
-      return;
-    }
-
-    this.isLoading = true; 
-
-    const requestBody = {
-      searchstring: this.searchString,
-      apikey: this.apiKey,
-      category: this.selectedOption
-    };
-
-    this.http.searchProducts(requestBody).subscribe(
-      (response) => {
-        this.isLoading = false;  
-        if (response.status_code === '1') {
-          this.searchResults = response.data.result || [];
-          if (this.searchResults.length === 0) {
-            this.toastr.info('No results found for your search.', 'Information');
-          } else {
-            this.toastr.success('Search completed successfully.');
-          }
-        } else {
-          this.toastr.error('Error: ' + response.status_message, 'Error');
-        }
+    this.http.getMedicines().subscribe(
+      (res: any) => {
+        this.products = res;
+        this.filterProducts();
       },
       (error) => {
-        this.isLoading = false; 
-        console.error('Error fetching search results:', error);
-        this.toastr.error('Something went wrong. Please try again later.', 'Error');
+        console.error('Error fetching products:', error);
+        this.toastr.error('Failed to fetch products!');
       }
     );
   }
 
+  filterProducts(): void {
+    if (!this.searchString && !this.selectedCategory) {
+      this.searchResults = [];  
+      return;
+    }
+
+    this.searchResults = this.products.filter((product) => {
+      const matchesSearchString = product.name.toLowerCase().includes(this.searchString.toLowerCase());
+      const matchesCategory = this.selectedCategory ? product.category === this.selectedCategory : true;
+      return matchesSearchString && matchesCategory;
+    });
+  }
+
+
+  onSearchInputChange(): void {
+    this.filterProducts();
+  }
+
+
+  onCategoryChange(): void {
+    this.filterProducts();
+  }
+
   closeDialog(): void {
     this.dialogRef.close();
+  }
+  addToCart(product: any): void {
+    this.cart.push(product);  
+    this.toastr.success(`${product.name} added to cart!`);
   }
 }

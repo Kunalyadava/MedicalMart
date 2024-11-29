@@ -377,6 +377,23 @@
           "orderCreatedDate": "2024-11-20T16:29:36.542Z"
         }
       ]
+    },
+    {
+      "id": "2443",
+      "firstname": "satish",
+      "mobile": "7903438820",
+      "email": "satish@gmail.com",
+      "referralCode": "",
+      "password": "Satish@123",
+      "addresses": [
+        {
+          "isSelected": false,
+          "city": "jjp",
+          "state": "bihar",
+          "pincode": "847403",
+          "isDefault": "yes"
+        }
+      ]
     }
   ],
   "medicines": [
@@ -404,7 +421,8 @@
       },
       "in_stock": true,
       "product_url": "https://www.myupchar.com/medicine/thekaraja-tailam-by-arya-vaidya-sala-p36751515",
-      "id": "1bad"
+      "id": "1bad",
+      "category": "Oil"
     },
     {
       "product_id": 96134,
@@ -430,7 +448,8 @@
       },
       "in_stock": true,
       "product_url": "https://www.myupchar.com/medicine/chyawanprash-by-dabur-p36751516",
-      "id": "17aa"
+      "id": "17aa",
+      "category": "Herbal Supplement"
     },
     {
       "product_id": 96135,
@@ -456,7 +475,8 @@
       },
       "in_stock": true,
       "product_url": "https://www.myupchar.com/medicine/liv-52-syrup-by-himalaya-p36751517",
-      "id": "f645"
+      "id": "f645",
+      "category": "Liver Care"
     },
     {
       "product_id": 96136,
@@ -482,7 +502,8 @@
       },
       "in_stock": true,
       "product_url": "https://www.myupchar.com/medicine/zandu-balm-p36751518",
-      "id": "e2d7"
+      "id": "e2d7",
+      "category": "Pain Relief"
     },
     {
       "product_id": 96137,
@@ -508,7 +529,8 @@
       },
       "in_stock": true,
       "product_url": "https://www.myupchar.com/medicine/amrutanjan-roll-on-p36751519",
-      "id": "a6be"
+      "id": "a6be",
+      "category": "Pain Relief"
     }
   ]
 }

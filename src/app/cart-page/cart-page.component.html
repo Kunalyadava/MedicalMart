@@ -1,15 +1,15 @@
 <div class="cart-container">
   <h1>Your Cart</h1>
 
-  <!-- If the cart is empty, show a message -->
+
   <div *ngIf="cartProducts.length === 0" class="empty-cart">
     <p>Your cart is empty. Please add some products to your cart.</p>
     <button (click)="dashboard()">Go to Products</button>
   </div>
 
-  <!-- Container for cart items -->
+ 
   <div class="cart-items-container">
-    <!-- Loop through cart products and display each product -->
+
     <div *ngFor="let product of cartProducts" class="cart-item">
       <img [src]="product.image" alt="Product Image" class="product-image" />
       <div class="product-details">
@@ -29,7 +29,7 @@
     </div>
   </div>
 
-  <!-- Show cart summary if there are products in the cart -->
+
   <div *ngIf="cartProducts.length > 0" class="cart-summary">
     <p>Total Items: {{ totalItems }}</p>
     <p>Total Price: ₹{{ totalPrice.toFixed(2) }}</p>

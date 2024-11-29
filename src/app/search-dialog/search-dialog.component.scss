@@ -133,3 +133,36 @@ mat-dialog-content {
   .example-full-width {
     width: 100%;
   }
+  .product-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .product-image {
+    width: 50px; /* Adjust size of the image */
+    height: auto;
+    margin-right: 10px; /* Space between image and text */
+    border-radius: 5px; /* Optional: rounded corners */
+  }
+  
+  .cart-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+  }
+  
+  .cart-button:hover {
+    background-color: #45a049;
+  }
+  
+  .cart-button mat-icon {
+    margin-right: 5px; /* Space between icon and text */
+  }
+  

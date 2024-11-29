@@ -53,19 +53,19 @@ export class CheckoutPageComponent implements OnInit {
         ]
       ]
     });
-    // Watch for changes in the payment method
+  
     this.checkoutForm.get('paymentMethod')?.valueChanges.subscribe(value => {
       this.onPaymentMethodChange(value);
     });
   }
 
-  // Get user data (cart and other info)
+ 
   getUserData(): void {
     this.http.getUserData(this.userId).subscribe({
       next: (res: any) => {
         this.userData = res;
         this.cartProducts = res?.cartArray || [];
-        this.calculateTotal(); // Recalculate total whenever cart data is fetched
+        this.calculateTotal(); 
       },
       error: (err) => {
         console.error('Error fetching user data:', err);
@@ -73,7 +73,7 @@ export class CheckoutPageComponent implements OnInit {
     });
   }
 
-  // Calculate the total price from cart products
+
   calculateTotal(): void {
     this.totalPrice = 0;
     this.cartProducts.forEach((product) => {
@@ -83,12 +83,11 @@ export class CheckoutPageComponent implements OnInit {
     });
   }
 
-  // Show payment method specific fields (card or UPI)
+
   onPaymentMethodChange(method: string): void {
     this.cardDetailsVisible = method === 'card';
     this.upiDetailsVisible = method === 'upi';
 
-    // Conditionally apply validators
     if (method === 'card') {
       this.checkoutForm.get('cardNumber')?.setValidators([Validators.pattern(/^\d{16}$/), Validators.required]);
       this.checkoutForm.get('cvv')?.setValidators([Validators.pattern(/^\d{3}$/), Validators.required]);
@@ -103,15 +102,15 @@ export class CheckoutPageComponent implements OnInit {
       this.checkoutForm.get('upiId')?.clearValidators();
     }
 
-    // Revalidate the form controls
+   
     this.checkoutForm.get('cardNumber')?.updateValueAndValidity();
     this.checkoutForm.get('cvv')?.updateValueAndValidity();
     this.checkoutForm.get('upiId')?.updateValueAndValidity();
   }
 
-  // Process the payment
+
   processPayment(): void {
-    // Check if the form is valid
+
     if (!this.userId) {
       this.toastr.warning('Please login to shop for medicines.', 'Login Required');
       return;
@@ -121,18 +120,17 @@ export class CheckoutPageComponent implements OnInit {
       return;
     }
   
-    // Calculate the total price from the cart (already done by calculateTotal())
+ 
     const totalPrice = this.totalPrice;
   
-    // Get the default address (assuming the first "yes" is the default address)
+  
     const defaultAddress = this.userData.addresses.find((address:any) => address.isDefault === 'yes');
   
-    // Generate a unique order ID (you can customize this generation logic)
+   
     const uniqueOrderId = `ORD${Date.now()}`;
-  
-    // Create order data
+
     const orderData = {
-      products: [...this.cartProducts], // Copy cart products to the order
+      products: [...this.cartProducts], 
       totalPrice: totalPrice,
       uniqueOrderId: uniqueOrderId,
       defaultAddress: defaultAddress,

@@ -35,11 +35,10 @@ export class HeaderComponent implements OnInit {
   }
   ngOnInit(): void {
     this.cartService.cartCount$.subscribe(count => {
-      this.cartCount = count;  // Update the cart count whenever it changes
+      this.cartCount = count;  
     });
   }
 
-  // Open the search dialog
   openSearchDialog() {
     const dialogRef = this.dialog.open(SearchDialogComponent, {
       width: '800px'

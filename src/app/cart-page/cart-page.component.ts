@@ -55,47 +55,45 @@ export class CartPageComponent implements OnInit {
   increaseQuantity(product: any): void {
 
     product.quantity = (product.quantity || 1) + 1;
-    this.updateCart(product); // Update the cart with the new quantity
+    this.updateCart(product); 
   }
   
   decreaseQuantity(product: any): void {
-    // Decrease the quantity (but ensure it's at least 1)
+
     if (product.quantity > 1) {
       product.quantity--;
-      this.updateCart(product); // Update the cart with the new quantity
+      this.updateCart(product); 
     }
   }
   
   removeFromCart(product: any): void {
-    // Remove the product from the cart
+
     const updatedCart = this.cartProducts.filter((item) => item.product_id !== product.product_id);
     this.cartProducts = updatedCart;
     this.calculateTotal();
-    this.updateCart({ ...product, quantity: 0 }); // Update the cart on the server
+    this.updateCart({ ...product, quantity: 0 }); 
   }
   
-  // Update cart data and recalculate total
+
   updateCart(product: any): void {
-    // Update the cart array with new quantity or product
+
     const updatedCart = this.cartProducts.map((item) =>
       item.product_id === product.product_id ? { ...item, quantity: product.quantity } : item
     );
-  
-    // Calculate total price and total items after the cart update
+
     this.cartProducts = updatedCart;
     this.calculateTotal();
   
-    // Use spread operator to keep the rest of the user data intact while updating the cartArray
     const updatedUserData = {
       ...this.userData,
-      cartArray: updatedCart // Only updating the cartArray
+      cartArray: updatedCart 
     };
   
-    // Send updated user data (including the updated cart) to the backend
+
     this.http.updateUser(this.userId, updatedUserData).subscribe({
       next: () => {
         this.toastr.success('Cart updated successfully');
-        // Update the localStorage to keep the cart persistent
+      
         localStorage.setItem('cartArray', JSON.stringify(updatedCart));
         this.cartService.updateCartCount(updatedCart.length);
       },
@@ -109,7 +107,7 @@ export class CartPageComponent implements OnInit {
   calculateTotal(): void {
     this.totalPrice = 0;
     this.totalItems = 0;
-    this.totalDiscount = 0;  // Reset total discount before recalculating
+    this.totalDiscount = 0
 
     this.cartProducts.forEach((product) => {
       const quantity = product.quantity || 1;
@@ -119,14 +117,13 @@ export class CartPageComponent implements OnInit {
       const discount = mrp - price;
       const productDiscount = discount * quantity;
 
-      // Update the total discount and price
+
       this.totalDiscount += productDiscount;
       this.totalItems += quantity;
       this.totalPrice += price * quantity;
     });
   }
 
-  // Checkout logic (Optional)
   checkout(): void {
     if (this.cartProducts.length === 0) {
       this.toastr.warning('Your cart is empty!', 'Empty Cart');
