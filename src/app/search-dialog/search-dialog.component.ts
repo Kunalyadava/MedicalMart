@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../services/api.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-search-dialog',
@@ -19,7 +20,7 @@ import { ToastrService } from 'ngx-toastr';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule, MatOptionModule, MatSelectModule,
+    MatButtonModule, MatOptionModule, MatSelectModule,RouterModule,
     MatIconModule, FormsModule, CommonModule
   ],
   templateUrl: './search-dialog.component.html',
@@ -34,7 +35,7 @@ export class SearchDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<SearchDialogComponent>,
-    private http: ApiService,
+    private http: ApiService,private router:Router,
     private toastr: ToastrService
   ) {}
 
@@ -84,5 +85,8 @@ export class SearchDialogComponent {
   addToCart(product: any): void {
     this.cart.push(product);  
     this.toastr.success(`${product.name} added to cart!`);
+  }
+  ordersList(){
+    this.router.navigate(['/orderlist']);
   }
 }

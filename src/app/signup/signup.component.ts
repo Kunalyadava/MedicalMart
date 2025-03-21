@@ -75,24 +75,37 @@ export class SignupComponent {
     this.addresses.push(this.createAddressGroup());
   }
 
-  removeAddress(): void {
-    const selectedAddresses = this.addresses.controls.filter((group) => group.get('isSelected')?.value);
+removeAddress(): void {
+  // Get all selected addresses (those with isSelected = true)
+  const selectedAddresses = this.addresses.controls.filter(
+    (group) => group.get('isSelected')?.value
+  );
 
-    if (selectedAddresses.length === 0) {
-      this.toastr.warning('Please select at least one address to delete.');
-      return;
-    }
-
-    // Ensure at least one address remains
-    if (this.addresses.length > 1) {
-      selectedAddresses.forEach((addressGroup) => {
-        const index = this.addresses.controls.indexOf(addressGroup);
-        this.addresses.removeAt(index);
-      });
-    } else {
-      this.toastr.warning('At least one address is required.');
-    }
+  // If no address is selected, show a warning
+  if (selectedAddresses.length === 0) {
+    this.toastr.warning('Please select at least one address to delete.');
+    return;
   }
+
+  // If all addresses are selected, prevent deletion
+  if (selectedAddresses.length === this.addresses.length) {
+    this.toastr.warning('You cannot delete all addresses. At least one address must remain.');
+    return;
+  }
+
+  // Ensure at least one address remains
+  if (this.addresses.length === 1) {
+    this.toastr.warning('At least one address is required.');
+    return;
+  }
+
+  // Remove the selected addresses
+  selectedAddresses.forEach((addressGroup) => {
+    const index = this.addresses.controls.indexOf(addressGroup);
+    this.addresses.removeAt(index);
+  });
+}
+
 
   onDefaultChange(selectedIndex: number): void {
     // Make sure only one address can be default
