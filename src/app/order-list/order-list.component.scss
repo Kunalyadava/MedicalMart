@@ -1,149 +1,137 @@
-.order-list-container {
-    max-width: 1000px; /* Increased width */
-    margin: auto;
-    padding: 30px; /* Increased padding */
-    font-family: 'Arial', sans-serif;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Increased shadow size */
-}
 
-.invoice-header {
-    margin-bottom: 30px; /* Increased space between sections */
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 20px; /* Increased padding at bottom */
-}
-
-.pharmacy-details {
-    text-align: left;
-    font-size: 20px; /* Increased font size */
-    font-weight: bold;
-    color: #333;
-}
-
-.pharmacy-details h2 {
-    margin: 0;
-    font-size: 24px; /* Increased font size */
-}
-
-.pharmacy-details p {
-    margin: 8px 0; /* Increased space between paragraphs */
-    font-size: 16px; /* Increased font size */
-}
-
-.order-info {
-    text-align: right;
-    font-size: 16px; /* Increased font size */
-    color: #333;
-}
-
-.order-info p {
-    margin: 8px 0; /* Increased space between paragraphs */
-}
-
-.order-item {
-    padding: 25px; /* Increased padding */
-    margin-bottom: 30px; /* Increased space between order items */
-    border: 1px solid #eee;
-    border-radius: 8px;
-    background: #f9f9f9;
-}
-
-.order-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px; /* Increased margin */
-}
-
-.order-header div {
-    font-size: 16px; /* Increased font size */
-    color: #333;
-}
-
-.order-header p {
-    margin: 0;
-}
-
-.order-details-table {
-    margin-bottom: 30px; /* Increased space between table and other sections */
-}
-
-.order-details-table table {
+.print-option {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .print-btn {
+    background-color: #4CAF50; 
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .print-btn:hover {
+    background-color: #45a049; 
+    transform: scale(1.05);
+  }
+  
+  .print-btn i {
+    margin-right: 8px;
+  }
+  
+  /* Styling the order-list container */
+  .order-list-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table styling */
+  .order-details-table table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fff;
-}
-
-.order-details-table th,
-.order-details-table td {
+    margin-top: 20px;
+  }
+  
+  .order-details-table th, .order-details-table td {
     border: 1px solid #ddd;
+    padding: 8px;
     text-align: left;
-    padding: 15px; /* Increased padding */
-}
-
-.order-details-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-.order-details-table td {
-    font-size: 16px; /* Increased font size */
-}
-
-.address-details,
-.pharmacy-details,
-.authorized-signatory {
-    margin-bottom: 25px; /* Increased margin */
-}
-
-.address-details h3,
-.pharmacy-details h3 {
-    font-size: 18px; /* Increased font size */
-    margin-bottom: 12px; /* Increased space between heading and content */
-}
-
-.address-details p {
-    font-size: 16px; /* Increased font size */
-    margin: 0;
-    line-height: 1.6; /* Increased line height */
-}
-
-.authorized-signatory {
-    text-align: right;
-}
-
-.authorized-signatory h1 {
-    font-size: 16px; /* Increased font size */
-    font-weight: bold;
-    margin: 0;
-    color: #333;
-}
-
-.authorized-signatory img {
-    width: 150px; /* Increased image width */
-    height: auto;
-    margin-top: 15px; /* Increased top margin */
-}
-
-.download-option {
-    text-align: center;
-    margin-top: 20px; /* Increased top margin */
-}
-
-.download-option button {
-    padding: 12px 25px; /* Increased padding */
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 8px; /* Slightly rounded corners */
-    font-size: 16px; /* Increased font size */
-    cursor: pointer;
-}
-
-.download-option button:hover {
-    background-color: #0056b3;
-}
+  }
+  
+  .order-details-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  /* Styling Address Section */
+  .address-details {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .address-details h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Invoice Header */
+  .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .pharmacy-details h2 {
+    margin-bottom: 10px;
+  }
+  
+  .order-info p {
+    margin: 5px 0;
+  }
+  /* Print Layout */
+@media print {
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .order-list-container {
+      background-color: #fff;
+      box-shadow: none;
+      margin: 0;
+      padding: 20px;
+      width: 100%;
+    }
+  
+    .invoice-header, .order-header, .order-details-table, .address-details {
+      margin-bottom: 20px;
+    }
+  
+    .print-option {
+      display: none; /* Hide print button in print view */
+    }
+  
+    .order-details-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+    .order-details-table th, .order-details-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+  
+    .order-details-table th {
+      background-color: #4CAF50;
+      color: white;
+    }
+  
+    /* Adjust font size and layout for print */
+    .order-details-table td, .order-details-table th {
+      font-size: 14px;
+    }
+  
+    .address-details {
+      font-size: 14px;
+    }
+  
+    .invoice-header h2 {
+      font-size: 18px;
+    }
+  
+    .invoice-header p {
+      font-size: 14px;
+    }
+  }
+  

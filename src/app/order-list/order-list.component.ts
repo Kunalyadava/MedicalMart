@@ -4,6 +4,7 @@ import { ApiService } from '../services/api.service';
 import { CommonModule } from '@angular/common';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { NgxPrintModule } from 'ngx-print';
 interface UserData {
   id: string;
   firstname: string;
@@ -79,7 +80,7 @@ interface Product {
 @Component({
   selector: 'app-order-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NgxPrintModule],
   templateUrl: './order-list.component.html',
   styleUrl: './order-list.component.scss'
 })

@@ -1,4 +1,14 @@
+<!-- Print Button Outside the Order Container -->
+
+
+<!-- Order List Container -->
 <div class="order-list-container" id="order-{{ order.uniqueOrderId }}" *ngFor="let order of cartProducts">
+  <div class="print-option">
+    <button class="print-btn" ngxPrint printSectionId="order-{{ order.uniqueOrderId }}">
+      <i class="fa fa-print"></i> Print Invoice
+    </button>
+  </div>
+  <!-- Invoice Header -->
   <div class="invoice-header">
     <!-- Pharmacy Name and Contact Details -->
     <div class="pharmacy-details">
@@ -14,6 +24,7 @@
     </div>
   </div>
 
+  <!-- Order Header -->
   <div class="order-header">
     <div>
       <p><strong>Order Date:</strong> {{ order.orderCreatedDate | date: 'short' }}</p>
@@ -23,6 +34,7 @@
     </div>
   </div>
 
+  <!-- Order Details Table -->
   <div class="order-details-table">
     <table>
       <thead>
@@ -30,7 +42,7 @@
           <th>Item Description</th>
           <th>Quantity</th>
           <th>Price</th>
-          <th>Discount % </th>
+          <th>Discount %</th>
           <th>Total</th>
         </tr>
       </thead>
@@ -46,6 +58,7 @@
     </table>
   </div>
 
+  <!-- Delivery Address -->
   <div class="address-details">
     <h3>Delivery Address:</h3>
     <p>
@@ -53,13 +66,5 @@
       Pincode: {{ order.defaultAddress.pincode }}
     </p>
   </div>
-  
-  <div class="authorized-signatory">
-    <h1>Authorized Signatory</h1>
-    <img src="assets/sign.png" alt="Authorized Signatory" class="signatory-image" />
-  </div>
 
-  <div class="download-option">
-    <button (click)="downloadPdf(order.uniqueOrderId)">Download PDF</button>
-  </div>
 </div>
